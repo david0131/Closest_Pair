@@ -1,14 +1,22 @@
 package Lab_ClosestPair_FinalVersion;
 
 import static java.lang.Math.sqrt;
+import java.util.Random;
 
 //@author escorciaad
 
 public class Lab_ClosestPair_FinalVersion {
       
         public static void main(String[] args) {
-            int N=2*(int)(Math.random()*4+3);
-            System.out.println("Numero de puntos: "+N);
+            Random r = new Random();
+            int c = 1;
+            int N=2*r.nextInt((int) Math.random()*15+10);
+            System.out.println(+c+".Número de puntos es "+N);
+            while (N<6){
+                c=c+1;
+                N=2*r.nextInt((int) Math.random()*15+10);
+                System.out.println(+c+".Número de puntos es "+N);
+            }
             int [][] coords = new int[N][2];
             System.out.println("|x||y|");
             for (int x=0; x < coords.length; x++) {
