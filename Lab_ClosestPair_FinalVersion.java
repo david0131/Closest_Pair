@@ -1,15 +1,16 @@
-package Lab_ClosestPair_FinalVersion;
+package lab_closestpair_finalversion;
 
 import static java.lang.Math.sqrt;
 import java.util.Random;
-
-//@author escorciaad
-
+/**
+ *
+ * @author escorciaad
+ */
 public class Lab_ClosestPair_FinalVersion {
-      
+
         public static void main(String[] args) {
             Random r = new Random();
-            int c = 1;
+            int c = 1, comps=0;
             int N=2*r.nextInt((int) Math.random()*15+10);
             System.out.println(+c+".Número de puntos es "+N);
             while (N<6){
@@ -39,13 +40,17 @@ public class Lab_ClosestPair_FinalVersion {
         //
             
             Lab_ClosestPair_FinalVersion dismin = new Lab_ClosestPair_FinalVersion();
-            
+            long ITime =  System.nanoTime();
             System.out.println(dismin.ClosestPair(N, coords));
+            long FTime =  System.nanoTime();
+            long DTime = FTime - ITime;
+            System.out.println("N es: "+N);
+            System.out.println("tiempo de ejecucion: "+DTime+ " nanosegundos " );
         }
         
         
         public double ClosestPair(int N, int coords[][]){
-            int i=0, j=0, primero, segundo, primero1, segundo1, primero2, segundo2;
+            int i=0, j=0, comps=0, primero, segundo, primero1, segundo1, primero2, segundo2;
             double dl_min = Double.POSITIVE_INFINITY;
             double dr_min = Double.POSITIVE_INFINITY;
             double dc_min = Double.POSITIVE_INFINITY;
@@ -60,7 +65,7 @@ public class Lab_ClosestPair_FinalVersion {
                         segundo = j;
                         dl_min = d;
                         System.out.println("la distancia minima izquierda actual es "+dl_min);
-                    }
+                    }comps = comps+1;
                   }
                   if(i>(N/2) & j>(N/2)+1){
                     d = (double)distance(coords,i,j);
@@ -69,8 +74,9 @@ public class Lab_ClosestPair_FinalVersion {
                         segundo1 = j;
                         dr_min = d;
                         System.out.println("la distancia minima derecha actual es "+dr_min);
-                    }  
+                    }comps = comps+1;  
                   }
+                        comps = comps+1;
                   if(i>=(N/2)-2 & j<(N/2)+2){
                     d = (double)distance(coords,i,j);
                     if(d < dc_min){
@@ -78,24 +84,30 @@ public class Lab_ClosestPair_FinalVersion {
                         segundo2 = j;
                         dc_min = d;
                         System.out.println("la distancia minima central actual es "+dc_min);
-                    }  
+                    }comps = comps+1;  
                   }
                }
             }
             if (dl_min<=dr_min & dl_min<=dc_min){
                 System.out.println("_______________________________________________");
+                System.out.println("# de comps: "+comps);
                 System.out.print("LA DISTANCIA MINIMA ES: ");
-            return  dl_min; 
+                return  dl_min;
             }
+            
             if (dr_min<=dl_min & dr_min<=dc_min){
                 System.out.println("_______________________________________________");
+                System.out.println("# de comps: "+comps);
                 System.out.print("LA DISTANCIA MINIMA ES: ");
                 return  dr_min; 
             }
             if (dc_min<=dr_min & dc_min<=dl_min){
                 System.out.println("_______________________________________________");
+                System.out.println("# de comps: "+comps);
                 System.out.print("LA DISTANCIA MINIMA ES: ");
-            }return  dc_min;
+                return  dc_min;
+            }
+            return 0;
         }
     
         public double distance(int coords[][], int i, int j){
