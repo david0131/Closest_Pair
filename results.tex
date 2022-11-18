@@ -20,14 +20,17 @@ times (nanoseconds) for increasing input sizes.
 		% inserts horizontal line
 		\hline
 		% separates column entries with the ampersand &
-		10& 35& 1997800316711600 \\
-		12& 44& 1997945809898000 \\
-		20& 105& 1998047688985600 \\
-		22& 121& 1997984288534200 \\
-		24& 149& 1998012627163400 \\
-		30& 227& 1998172719441100 \\
-		42& 436& 1998192378544300 \\
-		50& 616& 1998242758918400
+		6& 28& 3308000\\
+        	10& 72& 4537200\\
+       		14& 140& 6382800\\
+        	22& 348& 29417200\\
+        	30& 652& 71381300\\
+        	38& 1052& 129206500\\
+        	50& 1832& 297944600\\
+        	68& 3407& 555592600\\
+        	86& 5468& 1074459200\\
+        	94& 6540& 1078633300\\
+        	132& 12943& 2257342300
 	\end{tabular}
 
 	% defines a label to refer to it
@@ -42,7 +45,7 @@ figure~\ref{fig:best}.
 	%centers the figure
 	\centering
 	% my LaTeX installation expects Encapsulated PostScript EPS graphs
-	\includegraphics[keepaspectratio]{average.jpeg}
+	\includegraphics[keepaspectratio]{average.png}
     \caption{
 		The average number of operations and runtime as a function of the input size $N$.
 	} 
