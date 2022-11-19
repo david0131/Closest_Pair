@@ -2,10 +2,9 @@ package lab_closestpair_finalversion;
 
 import static java.lang.Math.sqrt;
 import java.util.Random;
-/**
- *
- * @author escorciaad
- */
+
+//@author escorciaad
+
 public class Lab_ClosestPair_FinalVersion {
 
         public static void main(String[] args) {
