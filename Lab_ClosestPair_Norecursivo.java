@@ -39,12 +39,12 @@ public class Lab_ClosestPair_FinalVersion {
         //
             
             Lab_ClosestPair_FinalVersion dismin = new Lab_ClosestPair_FinalVersion();
-            long ITime =  System.nanoTime();
+            long TInicial =  System.nanoTime();
             System.out.println(dismin.ClosestPair(N, coords));
-            long FTime =  System.nanoTime();
-            long DTime = FTime - ITime;
+            long TFinal =  System.nanoTime();
+            long TDif = TFinal - TInicial;
             System.out.println("N es: "+N);
-            System.out.println("tiempo de ejecucion: "+DTime+ " nanosegundos " );
+            System.out.println("El tiempo de ejecucion es: "+TDif+ " nanosegundos " );
         }
         
         
